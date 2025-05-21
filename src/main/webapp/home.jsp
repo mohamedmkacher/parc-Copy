@@ -81,15 +81,15 @@
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             margin-bottom: 2rem;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         .feature-icon {
@@ -160,11 +160,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-home"></i> Accueil</a>
+                    <a class="nav-link" href="/voitures"><i class="fas fa-car"></i> Véhicules</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-car"></i> Véhicules</a>
+                    <a class="nav-link" href="register.jsp"><i class="fa-solid fa-user-plus"></i></i> S'inscrire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.jsp"><i class="fa-solid fa-right-to-bracket"></i> Connexion</a>
                 </li>
 
             </ul>
@@ -177,7 +181,7 @@
     <div class="container hero-content text-center">
         <h1 class="display-3 fw-bold mb-4">Louez la voiture de vos rêves</h1>
         <p class="lead mb-4">Des véhicules premium pour tous vos besoins de déplacement</p>
-        <a href="#" class="btn btn-light btn-lg px-4">Voir nos véhicules</a>
+        <a href="/voitures" class="btn btn-light btn-lg px-4">Voir nos véhicules</a>
     </div>
 </section>
 
@@ -219,8 +223,8 @@
             <div class="footer-section">
                 <h5>Liens Rapides</h5>
                 <ul class="footer-links">
-                    <li><a href="#">Nos véhicules</a></li>
-                    <li><a href="#">Réservation</a></li>
+                    <li><a href="/voitures">Nos véhicules</a></li>
+
                     <li><a href="#">Conditions</a></li>
                     <li><a href="#">FAQ</a></li>
                 </ul>

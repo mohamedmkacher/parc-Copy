@@ -739,7 +739,7 @@
                         </div>
                         <div>
                             <div class="fw-bold"><%= client.getNom() %> <%= client.getPrenom() %></div>
-                            <small class="text-muted">ID: <%= client.getCode_client() %></small>
+                            <small class="text-muted">ID: <%= client.getId() %></small>
                         </div>
                     </div>
                 </td>
@@ -752,11 +752,11 @@
                     <div><i class="fas fa-id-badge me-2"></i>Permis: <%= client.getNum_permis() %></div>
                 </td>
                 <td>
-                    <a href="/client/updating?id=<%= client.getCode_client() %>"
+                    <a href="/client/updating?id=<%= client.getId() %>"
                        class="btn btn-warning btn-action" title="Modifier">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <button onclick="confirmDelete(<%= client.getCode_client() %>)"
+                    <button onclick="confirmDelete(<%= client.getId() %>)"
                             class="btn btn-danger btn-action" title="Supprimer">
                         <i class="fas fa-trash"></i>
                     </button>

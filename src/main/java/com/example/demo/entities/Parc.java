@@ -17,6 +17,17 @@ public class Parc {
         this.voitures = new ArrayList<>();
     }
 
+    @Override
+    public String toString() {
+        return "Parc{" +
+                "num_parc=" + num_parc +
+                ", libelle='" + libelle + '\'' +
+                ", capacite=" + capacite +
+                ", localisation='" + localisation + '\'' +
+                ", voitures=" + voitures +
+                '}';
+    }
+
     public Parc() {
 
     }

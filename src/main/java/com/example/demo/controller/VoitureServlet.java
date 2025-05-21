@@ -53,11 +53,13 @@ public class VoitureServlet extends HttpServlet {
                 voiture_add.setModele(request.getParameter("modele"));
                 voiture_add.setKilometrage(Float.parseFloat(request.getParameter("kilometrage")));
                 voiture_add.setMarque(request.getParameter("marque"));
+                voiture_add.setPrixJour(Double.parseDouble(request.getParameter("prixJour")));
                 Parc parc_add = modelParc.getParc(Integer.parseInt(request.getParameter("parc")));
 
                 voiture_add.setParc(parc_add);
 
                 modelVoiture.setVoiture(voiture_add);
+                System.out.println(voiture_add);
                 modelVoiture.add();
                 request.setAttribute("added", true);
                 request.getRequestDispatcher("/voiture/list").forward(request, response);
@@ -90,6 +92,7 @@ public class VoitureServlet extends HttpServlet {
                 voiture_updated.setModele(request.getParameter("modele"));
                 voiture_updated.setKilometrage(Float.parseFloat(request.getParameter("kilometrage")));
                 voiture_updated.setMarque(request.getParameter("marque"));
+                voiture_updated.setPrixJour(Double.parseDouble(request.getParameter("prixJour")));
                 Parc parc_updated = modelParc.getParc(Integer.parseInt(request.getParameter("parc")));
 
                 voiture_updated.setParc(parc_updated);

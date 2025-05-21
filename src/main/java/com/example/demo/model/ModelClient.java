@@ -24,7 +24,7 @@ public class ModelClient {
     }
 
     public void delete() {
-        this.daoClient.supprimerClient(client.getCode_client());
+        this.daoClient.supprimerClient(client.getId());
     }
     public Client getClient(int id) {
         return daoClient.getClient(id);

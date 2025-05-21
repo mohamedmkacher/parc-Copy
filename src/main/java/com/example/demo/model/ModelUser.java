@@ -35,4 +35,7 @@ public class ModelUser {
     public void setUser(User user) {
         this.user = user;
     }
-} 
+
+    public boolean createUser(User newUser) {return this.daoUser.create(newUser);
+    }
+}

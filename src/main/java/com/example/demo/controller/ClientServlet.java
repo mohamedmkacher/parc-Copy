@@ -72,7 +72,7 @@ public class ClientServlet extends HttpServlet {
             case "/client/update":
                 int id_updated = Integer.parseInt(request.getParameter("id"));
                 Client client_updated = new Client();
-                client_updated.setCode_client(id_updated);
+                client_updated.setId(id_updated);
                 client_updated.setNum_cin(request.getParameter("num_cin"));
                 client_updated.setNom(request.getParameter("nom"));
                 client_updated.setPrenom(request.getParameter("prenom"));
@@ -91,7 +91,7 @@ public class ClientServlet extends HttpServlet {
             case "/client/delete":
                 int id_delete = Integer.parseInt(request.getParameter("id"));
                 Client client_delete = new Client();
-                client_delete.setCode_client(id_delete);
+                client_delete.setId(id_delete);
                 modelClient.setClient(client_delete);
                 modelClient.delete();
                 request.setAttribute("deleted", true);

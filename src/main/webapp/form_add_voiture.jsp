@@ -434,6 +434,18 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="number" step="0.01" class="form-control" id="prixJour" name="prixJour" placeholder="Prix par jour" required min="0">
+                                        <label for="prixJour"><i class="fas fa-euro-sign form-icon"></i>Prix par jour</label>
+                                        <div class="invalid-feedback">
+                                            Veuillez saisir le prix par jour
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Affectation -->

@@ -7,14 +7,16 @@ public class Voiture {
     private String modele;
     private float kilometrage;
     private Parc parc;
+    private double prixJour;
 
-    public Voiture(int code_voiture, String matricule, String marque, String modele, float kilometrage, Parc parc) {
+    public Voiture(int code_voiture, String matricule, String marque, String modele, float kilometrage, Parc parc, double prixJour) {
         this.code_voiture = code_voiture;
         this.matricule = matricule;
         this.marque = marque;
         this.modele = modele;
         this.kilometrage = kilometrage;
         this.parc = parc;
+        this.prixJour = prixJour;
     }
 
     public Voiture() {
@@ -67,5 +69,26 @@ public class Voiture {
 
     public void setParc(Parc parc) {
         this.parc = parc;
+    }
+
+    public double getPrixJour() {
+        return prixJour;
+    }
+
+    public void setPrixJour(double prixJour) {
+        this.prixJour = prixJour;
+    }
+
+    @Override
+    public String toString() {
+        return "Voiture{" +
+                "code_voiture=" + code_voiture +
+                ", matricule='" + matricule + '\'' +
+                ", marque='" + marque + '\'' +
+                ", modele='" + modele + '\'' +
+                ", kilometrage=" + kilometrage +
+                ", parc=" + parc +
+                ", prixJour=" + prixJour +
+                '}';
     }
 }

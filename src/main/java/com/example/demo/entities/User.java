@@ -3,17 +3,17 @@ package com.example.demo.entities;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private Long id;
-    private String username;
-    private String password;
-    private String email;
-    private String role;
-    private boolean enabled;
+    protected int id;
+    protected String username;
+    protected String password;
+    protected String email;
+    protected String role;
+    protected boolean enabled;
 
     public User() {
     }
 
-    public User(Long id, String username, String password, String email, String role, boolean enabled) {
+    public User(int id, String username, String password, String email, String role, boolean enabled) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -23,11 +23,11 @@ public class User implements Serializable {
     }
 
     // Getters and Setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

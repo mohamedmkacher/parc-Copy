@@ -1,7 +1,7 @@
 package com.example.demo.entities;
 
-public class Client {
-    private int code_client;
+public class Client extends User {
+
     private String num_cin;
     private String num_permis;
     private String nom;
@@ -9,26 +9,13 @@ public class Client {
     private int age;
     private String adresse;
     private String tel;
-    private String email;
+    
 
-    @Override
-    public String toString() {
-        return "Client{" +
-                "code_client=" + code_client +
-                ", num_cin='" + num_cin + '\'' +
-                ", num_permis='" + num_permis + '\'' +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", age=" + age +
-                ", adresse='" + adresse + '\'' +
-                ", tel='" + tel + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
+
     public Client() {}
 
     public Client(int code_client, String num_cin, String num_permis, String nom, String prenom, int age, String adresse, String tel, String email) {
-        this.code_client = code_client;
+        this.id = code_client;
         this.num_cin = num_cin;
         this.num_permis = num_permis;
         this.nom = nom;
@@ -39,12 +26,17 @@ public class Client {
         this.email = email;
     }
 
-    public int getCode_client() {
-        return code_client;
-    }
-
-    public void setCode_client(int code_client) {
-        this.code_client = code_client;
+    @Override
+    public String toString() {
+        return "Client{" +
+                "num_cin='" + num_cin + '\'' +
+                ", num_permis='" + num_permis + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", age=" + age +
+                ", adresse='" + adresse + '\'' +
+                ", tel='" + tel + '\'' +
+                '}';
     }
 
     public String getNum_cin() {

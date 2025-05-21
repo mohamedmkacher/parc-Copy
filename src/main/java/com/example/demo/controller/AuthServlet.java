@@ -41,6 +41,8 @@ public class AuthServlet extends HttpServlet {
         
         if ("/login".equals(pathInfo)) {
             handleLogin(request, response);
+        } else if ("/register".equals(pathInfo)) {
+            handleRegister(request, response);
         } else {
             response.sendError(HttpServletResponse.SC_NOT_FOUND);
         }
@@ -58,12 +60,13 @@ public class AuthServlet extends HttpServlet {
         if (user != null && user.getPassword().equals(password) && user.isEnabled()) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            
+
             if ("ADMIN".equals(user.getRole())) {
                 session.setAttribute("role", "ADMIN");
                 response.sendRedirect(request.getContextPath() + "/admin/dashboard.jsp");
             } else {
-                session.setAttribute("role", "CLIENT");
+
+                 session.setAttribute("role", "CLIENT");
                 response.sendRedirect(request.getContextPath() + "/client/dashboard.jsp");
             }
         } else {
@@ -79,5 +82,39 @@ public class AuthServlet extends HttpServlet {
             session.invalidate();
         }
         response.sendRedirect(request.getContextPath() + "/");
+    }
+
+    private void handleRegister(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String email = request.getParameter("email");
+        
+        System.out.println("Register attempt - Username: " + username); // Pour le débogage
+
+        // Check if user already exists
+        if (modelUser.getUser(username) != null) {
+            request.setAttribute("error", "Username already exists");
+            request.getRequestDispatcher("/register.jsp").forward(request, response);
+            return;
+        }
+
+        // Create new user
+        User newUser = new User();
+        newUser.setUsername(username);
+        newUser.setPassword(password);
+        newUser.setEmail(email);
+        newUser.setRole("CLIENT");
+        newUser.setEnabled(true);
+
+        // Save user
+        if (modelUser.createUser(newUser)) {
+            // Registration successful, redirect to login
+            request.setAttribute("success", "Registration successful! Please login.");
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
+        } else {
+            request.setAttribute("error", "Registration failed. Please try again.");
+            request.getRequestDispatcher("/register.jsp").forward(request, response);
+        }
     }
 } 
